@@ -1,1 +1,36 @@
-hello world
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Message Bored</title>
+</head>
+<body ng-app="boredApp">
+
+  <div class='nav-bar'>
+    <li>
+      <a ng-href="/">Home</a>
+    </li>
+    <li>
+      <a ng-href="/latest">Latest</a>
+    </li>
+    <li>
+      <a ng-href="/topics">Topics</a>
+    </li>
+    <li>
+      <a ng-href="/Users">Users</a>
+    </li>
+  </div>
+
+  <ng-view></ng-view>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"
+    type="text/javascript"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"
+    type="text/javascript"></script>
+  <script
+    src="./scripts/app.js"
+    type="text/javascript"></script>
+</body>
+</html>
