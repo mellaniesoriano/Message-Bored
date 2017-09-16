@@ -7,19 +7,23 @@
 <body ng-app="boredApp">
 
   <div class='nav-bar'>
-    <li>
-      <a ng-href="/">Home</a>
-    </li>
-    <li>
-      <a ng-href="/latest">Latest</a>
-    </li>
-    <li>
-      <a ng-href="/topics">Topics</a>
-    </li>
-    <li>
-      <a ng-href="/Users">Users</a>
-    </li>
+    <ul>
+      <li>
+        <a ng-href="/">Home</a>
+      </li>
+      <li>
+        <a ng-href="/latest">Latest</a>
+      </li>
+      <li>
+        <a ng-href="/topics">Topics</a>
+      </li>
+      <li>
+        <a ng-href="/Users">Users</a>
+      </li>
+    </ul>
   </div>
+
+  <h1>YOU ARE HOME :)</h1>
 
   <ng-view></ng-view>
 
@@ -31,6 +35,24 @@
     type="text/javascript"></script>
   <script
     src="./scripts/app.js"
+    type="text/javascript"></script>
+  <script
+    src="./scripts/services.js"
+    type="text/javascript"></script>
+  <script
+    src="./scripts/Message/msgController.js"
+    type="text/javascript"></script>
+  <script
+    src="./scripts/User/userController.js"
+    type="text/javascript"></script>
+  <script
+    src="./scripts/User/singleUserCtrl.js"
+    type="text/javascript"></script>
+  <script
+    src="./scripts/Topic/topicController.js"
+    type="text/javascript"></script>
+  <script
+    src="./scripts/Topic/singleTopicCtrl.js"
     type="text/javascript"></script>
 </body>
 </html>

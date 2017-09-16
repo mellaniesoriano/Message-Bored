@@ -5,12 +5,23 @@ angular.module(boredApp)
   $routeProvider
     .when('/', {
       templateUrl: 'index.html',
-      controller: 'userController'
+      controller: 'msgController'
     })
+    .when('/users', {
+      templateUrl: '/User/user.html',
+      controller: 'UserController'
+    })
+    .when('/users/:id', {
+      templateUrl: '/User/singleUser.html',
+      controller: 'singleUserCtrl'
+    })
+    .when('/createUser', {
+      templateUrl: '/User/createUser.js',
+      controller: 'createUserCtrl'
+    })
+    .otherwise({
+    template: '<h1><center>OOPS! PAGE NOT FOUND! ;(</center></h1>'
+  });
 
-
-
-
-
-
+  $locationProvider.html5Mode(true);
 }]);//end module
