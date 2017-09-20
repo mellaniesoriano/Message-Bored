@@ -1,27 +1,23 @@
 module.exports = function(sequelize, DataTypes) {
-  let Message = sequelize.define("Message", {
+  let Messages = sequelize.define("messages", {
     body: {
       type: DataTypes.TEXT,
       allowNull: false
     }
-  }, {
-    classMethods: {
-      associate: function(models) {
-        Message.belongsTo(models.Topic, {
-          foreignKey: {
-            name: 'topic_id',
-            allowNull: false
-          }
-        });
-        Message.belongsTo(models.User, {
-          as: 'Author',
-          foreignKey: {
-            name: 'author_id',
-            allowNull: false
-          }
-        });
-      }
-    }
   });
-  return Message;
+  Messages.associate = function(models) {
+    Messages.belongsTo(models.topics,  {
+      foreignKey: {
+        name: 'topic_id',
+        allowNull: false
+      }
+    });
+    Messages.belongsTo(models.users,  {
+      foreignKey: {
+        name: 'author_id',
+        allowNull: false
+      }
+    });
+  };
+  return Messages;
 };
