@@ -11,6 +11,5 @@ angular.module('boredApp')
       };
       UserService.addUser(newUser);
       $scope.newUser.name = '';
-      window.location.href = '/login';
     };
   }]);

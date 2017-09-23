@@ -10,9 +10,6 @@ angular.module('boredApp')
           localStorage.setItem('username', user.data.username);
           localStorage.setItem('loggedIn', true);
         }
-      })
-      .catch(err => {
-        throw err;
       });
     }
   };

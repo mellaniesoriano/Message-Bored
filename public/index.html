@@ -2,57 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Message Bored</title>
+  <title>Message-Bored</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <base href="/">
 </head>
 <body ng-app="boredApp">
 
-  <div class='nav-bar'>
-    <ul>
-      <li>
-        <a ng-href="/">Home</a>
-      </li>
-      <li>
-        <a ng-href="/latest">Latest</a>
-      </li>
-      <li>
-        <a ng-href="/topics">Topics</a>
-      </li>
-      <li>
-        <a ng-href="/Users">Users</a>
-      </li>
-    </ul>
+  <div ng-switch="loggedIn" class="nav-bar">
+    <a ng-href="/">Home</a>
+    <a ng-href="/latest">Latest</a>
+    <a ng-href="/users">Users</a>
+    <a ng-href="/login" ng-switch-when="false">Login</a>
+    <a ng-href="/register" ng-switch-when="false">Register</a>
+    <button ng-click="logoutUser()" ng-switch-default>Logout</button>
   </div>
-
-  <h1>YOU ARE HOME :)</h1>
+  <br>
 
   <ng-view></ng-view>
 
   <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"
-    type="text/javascript"></script>
+    src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
   <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"
-    type="text/javascript"></script>
+    src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
   <script
-    src="./scripts/app.js"
-    type="text/javascript"></script>
+    src="/scripts/app.js"></script>
   <script
-    src="./scripts/services.js"
-    type="text/javascript"></script>
+    src="/scripts/controllers/home.controllers.js"></script>
   <script
-    src="./scripts/Message/msgController.js"
-    type="text/javascript"></script>
+    src="/scripts/controllers/latest.controllers.js"></script>
   <script
-    src="./scripts/User/userController.js"
-    type="text/javascript"></script>
+    src="/scripts/controllers/login.controllers.js"></script>
   <script
-    src="./scripts/User/singleUserCtrl.js"
-    type="text/javascript"></script>
+    src="/scripts/controllers/topics.controllers.js"></script>
   <script
-    src="./scripts/Topic/topicController.js"
-    type="text/javascript"></script>
+    src="/scripts/controllers/newUser.controllers.js"></script>
   <script
-    src="./scripts/Topic/singleTopicCtrl.js"
-    type="text/javascript"></script>
+    src="/scripts/controllers/user.controllers.js"></script>
+  <script
+    src="/scripts/controllers/users.controllers.js"></script>
+  <script
+    src="/scripts/services/login.services.js"></script>
+  <script
+    src="/scripts/services/message.services.js"></script>
+  <script
+    src="/scripts/services/topic.services.js"></script>
+  <script
+    src="/scripts/services/user.services.js"></script>
 </body>
 </html>

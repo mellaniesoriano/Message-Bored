@@ -1,14 +1,21 @@
 <div class="latest-container">
   <ul>
-    <li ng-repeat="message in messages | orderBy :'-message'">
-    <a ng-href="/topics/{{message.topic.id}}">
-      {{ message.topic.name }}
-    </a>
-    <p>
-      {{ message.body }}
-      {{ message.createdAt }}
-      {{ message.user.name }}
-    </p>
+    <li
+      ng-repeat="message in messages | orderBy :'-message'">
+      <a
+        ng-href="/topics/{{message.topic.id}}"
+        class="topic-title">
+          {{ message.topic.name }}
+      </a>
+      <p class="message-body">
+        {{ message.body }}
+      </p>
+      <p class="message-username">
+        By: {{ message.user.name }}
+      </p>
+      <p class="message-date">
+        Date Posted: {{ message.createdAt }}
+      </p>
     </li>
   </ul>
 </div>

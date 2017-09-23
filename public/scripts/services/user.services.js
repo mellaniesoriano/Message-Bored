@@ -5,7 +5,7 @@ angular.module('boredApp')
   return {
     getUsers: () => {
       return $http.get('/api/users')
-      .then(function(users) {
+      .then(users => {
          return users.data;
       });
     },
