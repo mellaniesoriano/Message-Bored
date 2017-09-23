@@ -34,6 +34,5 @@ angular.module('boredApp')
   .otherwise({
     redirectTo: '/'
   });
-
   $locationProvider.html5Mode(true);
 }]);
