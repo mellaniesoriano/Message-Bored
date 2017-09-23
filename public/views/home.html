@@ -1,0 +1,19 @@
+<div class="home-container">
+  <h2>Topics:</h2>
+    <ul>
+      <li ng-repeat="topic in topics">
+        <a ng-href="/topics/{{topic.id}}">
+          {{ topic.name }}
+        </a>
+      </li>
+    </ul>
+
+    <input
+      type="text"
+      ng-model="newTopic.name">
+      <br>
+    <button
+      ng-click="addTopic()">
+        Add New Topic
+    </button>
+</div>
