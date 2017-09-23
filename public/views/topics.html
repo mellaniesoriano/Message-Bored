@@ -1,0 +1,29 @@
+<div class="topics-container">
+  <h2>{{ topic.name }}</h2>
+  <ul>
+    <div
+      ng-repeat="message in messages | orderBy: '-createdAt'">
+      <p class="message-date">
+        Date posted: {{ message.createdAt }}
+      </p>
+      <p class="message-username">
+        {{ message.user.name }}
+      </p>
+      <p class="message-body">
+        {{ message.body }}
+      </p>
+    </div>
+  </ul>
+
+  <input
+    type="text"
+    ng-model="newMessage.body"
+    class="message-input">
+    <br>
+  <button
+    ng-click="addMessage()"
+    class="new-msg-btn">
+      Add Message
+  </button>
+</div>
+
