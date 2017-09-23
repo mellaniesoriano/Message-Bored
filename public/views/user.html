@@ -1,0 +1,9 @@
+<h1>{{ user }}</h1>
+
+<ul>
+  <li ng-repeat="message in messages | orderBy: '-createdAt'">
+  <p> {{ message.topic.name }}</p>
+  <p> {{ message.body }}</p>
+  <p> {{ message.createdAt }}</p>
+  </li>
+</ul>
