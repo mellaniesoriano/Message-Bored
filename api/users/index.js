@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+
 let db = require('../../models');
 let Users = db.users;
 let Topics = db.topics;
@@ -15,6 +16,9 @@ router.get('/', (req,res) => {
       };
     });
     res.json(allUsers);
+  })
+  .catch(err => {
+    throw err;
   });
 });
 
@@ -31,40 +35,52 @@ router.get('/:id', (req,res) => {
               attributes: ['name']
             }
           ],
-          attributes:['body', 'createdAt']
+          attributes: ['body', 'createdAt']
         }
       ]
     })
-    .then(users => {
-      let userInfo = {
-        username: users.name,
-        posts: users.topics,
-        messages: users.messages
+    .then(user => {
+      let userObj = {
+        username: user.name,
+        posts: user.topics,
+        messages: user.messages
       };
-      res.json(userInfo);
-    });
-});
-
-router.get('/login/:id', (req,res) => {
-  Users.findOne({
-    where: {
-      name: parseInt(req.params.id)
-    }
+    res.json(userObj);
   })
-  .then(users => {
-    let user = {
-      username: users.name
-    };
-    res.json(user);
+  .catch(err => {
+    throw err;
   });
 });
 
-router.post('/', (req,res)=>{
+router.get('/login/:id', (req,res) => {
+  console.log(req.params);
+  let verifyUsername = (req.params.id);
+  Users.findOne(
+  {
+    where: {
+      name: verifyUsername
+    }
+  })
+  .then(users => {
+    let getUser = {
+      username: users.name
+    };
+    res.json(getUser);
+  })
+  .catch(err => {
+    throw err;
+  });
+});
+
+router.post('/', (req,res) => {
   Users.create({
     name: req.body.name,
   })
-  .then(newUser => {
-    res.json(newUser);
+  .then(displayData => {
+    res.json(displayData);
+  })
+  .catch(err => {
+    throw err;
   });
 });
 

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+
 let db = require('../../models');
 let Users = db.users;
 let Topics = db.topics;
@@ -71,8 +72,8 @@ router.post('/', (req,res) => {
       res.json(newUser);
     })
     .catch(err => {
-      console.log(err);
-    })
+      throw err;
+    });
   });
 });
 
@@ -92,7 +93,13 @@ router.put('/:name', (req,res) => {
         username: displayUser.username
       };
       res.json(newUser);
+    })
+    .catch(err => {
+      throw err;
     });
+  })
+  .catch(err => {
+    throw err;
   });
 });
 

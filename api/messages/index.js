@@ -31,6 +31,9 @@ router.get('/', (req,res)=>{
       };
     });
     res.json(msgObj);
+  })
+  .catch(err => {
+    throw err;
   });
 });
 
@@ -58,6 +61,9 @@ router.get('/:id', (req,res) => {
       messages: topic.messages
     };
     res.json(topicObj);
+  })
+  .catch(err => {
+    throw err;
   });
 });
 
@@ -77,7 +83,13 @@ router.post('/', (req,res) => {
     })
     .then(displayData => {
       res.json(displayData);
+    })
+    .catch(err => {
+      throw err;
     });
+  })
+  .catch(err => {
+    throw err;
   });
 });
 
