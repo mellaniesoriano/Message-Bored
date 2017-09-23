@@ -1,0 +1,32 @@
+@import "partials/typography";
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: $poppins;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: black;
+
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-family: $poppins;
+  text-transform: uppercase;
+}
+
+button {
+  background: grey;
+  color: white;
+  border: none;
+  font-family: $poppins;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}

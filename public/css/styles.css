@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Poppins:300,400");
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins";
+  text-transform: uppercase;
+  font-weight: 300;
+  color: black; }
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-family: "Poppins";
+  text-transform: uppercase; }
+
+button {
+  background: grey;
+  color: white;
+  border: none;
+  font-family: "Poppins";
+  text-transform: uppercase; }
+
+a {
+  text-decoration: none;
+  color: black; }
