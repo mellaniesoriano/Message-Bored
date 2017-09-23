@@ -1,27 +1,39 @@
 angular.module('boredApp', ['ngRoute']);
 
-angular.module(boredApp)
-.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+angular.module('boredApp')
+.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
   $routeProvider
-    .when('/', {
-      templateUrl: 'index.html',
-      controller: 'msgController'
-    })
-    .when('/users', {
-      templateUrl: '/User/user.html',
-      controller: 'UserController'
-    })
-    .when('/users/:id', {
-      templateUrl: '/User/singleUser.html',
-      controller: 'singleUserCtrl'
-    })
-    .when('/createUser', {
-      templateUrl: '/User/createUser.js',
-      controller: 'createUserCtrl'
-    })
-    .otherwise({
-    template: '<h1><center>OOPS! PAGE NOT FOUND! ;(</center></h1>'
+  .when('/', {
+    templateUrl: '/views/home.html',
+    controller: 'HomeController'
+  })
+  .when('/register', {
+    templateUrl: '/views/newUser.html',
+    controller: 'NewUserController'
+  })
+  .when('/login', {
+    templateUrl: '/views/login.html',
+    controller: 'LoginController'
+  })
+  .when('/users', {
+    templateUrl: '/views/users.html',
+    controller: 'UsersController'
+  })
+  .when('/users/:id', {
+    templateUrl: '/views/user.html',
+    controller: 'UserController'
+  })
+  .when('/topics/:id', {
+    templateUrl: '/views/topics.html',
+    controller: 'TopicController'
+  })
+  .when('/latest', {
+    templateUrl: '/views/latest.html',
+    controller: 'LatestController'
+  })
+  .otherwise({
+    redirectTo: '/'
   });
 
   $locationProvider.html5Mode(true);
-}]);//end module
+}]);

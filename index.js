@@ -1,18 +1,19 @@
-const path = require('path');
 const express = require('express');
-const app = express();
 const PORT = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
-const db = require('./models');
+const app = express();
+let db = require('./models');
 
-app.use(express.static('./public') );
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use('/api', require('./api'));
 
-app.get('*', (req, res) => {
-  res.sendFile('index.html', { root: path.join(__dirname, '/public')});
+app.use('*', (req, res) => {
+  res.sendFile('./public/index.html', { root: __dirname });
 });
 
-app.listen(PORT, () =>{
-  db.sequelize.sync({force:true});
-  console.log(`Listening on ${PORT}`);
+app.listen(PORT, () => {
+  // db.sequelize.sync({force:true});
+  console.log('server started on port: ' + PORT);
 });
