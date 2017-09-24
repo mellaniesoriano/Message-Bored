@@ -10,6 +10,18 @@
 
   <div ng-switch="loggedIn" class="nav-bar">
     <a ng-href="/">Home</a>
+
+    <!-- drop down menu for topics -->
+    <!-- <div class="dropdown">
+      <a ng-href="/topics" class="dropbtn">Topics</a>
+      <div class="dropdown-content">
+        <a ng-href="/topics/{{topic.id}}">1</a>
+        <a ng-href="/topics/{{topic.id}}">2</a>
+        <a ng-href="/topics/{{topic.id}}">3</a>
+      </div>
+    </div> -->
+
+
     <a ng-href="/latest">Latest</a>
     <a ng-href="/users">Users</a>
     <a ng-href="/login" ng-switch-when="false">Login</a>

@@ -1,8 +1,8 @@
 angular.module('boredApp')
 .controller(
   'TopicController',
-  ['$scope','$routeParams','TopicService', 'MessageService',
-  function($scope, $routeParams, TopicService, MessageService) {
+  ['$rootScope','$scope','$routeParams','TopicService', 'MessageService',
+  function($rootScope, $scope, $routeParams, TopicService, MessageService) {
     var topicId = $routeParams.id;
     function getTopic() {
       TopicService.getTopic(topicId)

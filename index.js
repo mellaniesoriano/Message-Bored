@@ -15,5 +15,5 @@ app.use('*', (req, res) => {
 
 app.listen(PORT, () => {
   // db.sequelize.sync({force:true});
-  console.log('server started on port: ' + PORT);
+  console.log(`server running on ${PORT}`);
 });

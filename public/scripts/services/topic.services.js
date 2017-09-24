@@ -3,20 +3,20 @@ angular.module('boredApp')
   ['$http',
   function($http) {
   return {
-    getTopics: function() {
+    getTopics: () => {
       return $http.get('/api/topics')
-      .then(function(topics) {
+      .then(topics => {
          return topics.data;
       });
     },
-    getTopic: function(data) {
-      return $http.get('/api/topics/' + data)
-      .then(function(topic) {
+    getTopic: topicId => {
+      return $http.get('/api/topics/' + topicId)
+      .then(topic => {
          return topic.data;
       });
     },
-    addTopic: function(data) {
-      return $http.post('/api/topics', data);
+    addTopic: newTopic => {
+      return $http.post('/api/topics', newTopic);
     }
   };
 }]);

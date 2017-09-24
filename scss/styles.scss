@@ -1,21 +1,21 @@
 @import "partials/typography";
+@import "partials/colors";
+
+@import "partials/home";
+@import "partials/navigation";
+@import "partials/latest";
+@import "partials/topics";
+@import "partials/users";
 
 body {
   display: flex;
   flex-direction: column;
-  font-family: $poppins;
+  flex-wrap: wrap;
+  font-family: $ovo;
+  background-color: $mint-green;
   text-transform: uppercase;
   font-weight: 300;
-  color: black;
-
-}
-
-.nav-bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  font-family: $poppins;
-  text-transform: uppercase;
+  padding-top: 2rem;
 }
 
 button {
@@ -24,9 +24,14 @@ button {
   border: none;
   font-family: $poppins;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: $pink;
+}
+
+ul {
+  list-style: none;
 }

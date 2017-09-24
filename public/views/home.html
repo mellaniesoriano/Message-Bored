@@ -1,12 +1,11 @@
 <div class="home-container">
-  <h2>Topics:</h2>
-    <ul>
-      <li ng-repeat="topic in topics">
+  <h2 class="header-title">Topics:</h2>
+      <div ng-repeat="topic in topics" class="home-info">
         <a ng-href="/topics/{{topic.id}}">
           {{ topic.name }}
         </a>
-      </li>
-    </ul>
+      </div>
+      <br>
 
     <input
       type="text"

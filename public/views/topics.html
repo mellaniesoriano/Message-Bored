@@ -1,29 +1,37 @@
 <div class="topics-container">
-  <h2>{{ topic.name }}</h2>
-  <ul>
+  <h2 class="header-title">{{ topic.name }}</h2>
+  <div class="topic-info-box">
     <div
-      ng-repeat="message in messages | orderBy: '-createdAt'">
-      <p class="message-date">
-        Date posted: {{ message.createdAt }}
-      </p>
-      <p class="message-username">
+      ng-repeat="message in messages | orderBy: '-createdAt'"
+      class="each-message">
+
+      <h3 class="message-name">
         {{ message.user.name }}
-      </p>
+      </h3>
       <p class="message-body">
         {{ message.body }}
       </p>
+      <p>
+        <small>
+          Date posted: {{ message.createdAt | date: 'short' }}
+        </small>
+      </p>
     </div>
-  </ul>
+  </div>
+  <br>
 
-  <input
+  <div class="new-msg-box">
+    <textarea
     type="text"
     ng-model="newMessage.body"
     class="message-input">
+  </textarea>
     <br>
   <button
     ng-click="addMessage()"
     class="new-msg-btn">
       Add Message
   </button>
+  </div>
 </div>
 

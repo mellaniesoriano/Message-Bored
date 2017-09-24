@@ -1,9 +1,12 @@
-<h1>{{ user }}</h1>
-
-<ul>
-  <li ng-repeat="message in messages | orderBy: '-createdAt'">
-  <p> {{ message.topic.name }}</p>
-  <p> {{ message.body }}</p>
-  <p> {{ message.createdAt }}</p>
-  </li>
-</ul>
+<div class="each-user-container">
+  <h2 class="header-title">{{ user }}</h2>
+  <div class="each-user-box">
+  <ul>
+    <li ng-repeat="message in messages | orderBy: '-createdAt'">
+      <a class="message-name" ng-href="/topics/{{topic.id}}"> {{ message.topic.name }}</a>
+      <p> {{ message.body }}</p>
+      <p> {{ message.createdAt }}</p>
+    </li>
+  </ul>
+</div>
+</div>
