@@ -24,9 +24,9 @@
 
     <a ng-href="/latest">Latest</a>
     <a ng-href="/users">Users</a>
-    <a ng-href="/login" ng-switch-when="false">Login</a>
-    <a ng-href="/register" ng-switch-when="false">Register</a>
-    <button ng-click="logoutUser()" ng-switch-default>Logout</button>
+    <a ng-href="/login" ng-switch-default>Login</a>
+    <a ng-href="/register" ng-switch-default>Register</a>
+    <button ng-click="logoutUser()" ng-switch-when="true">Logout</button>
   </div>
   <br>
 

@@ -35,4 +35,10 @@ angular.module('boredApp')
     redirectTo: '/'
   });
   $locationProvider.html5Mode(true);
-}]);
+}])
+.run(
+  () => {
+    return localStorage.setItem('loggedIn', false) || localStorage.setItem('username', null);
+
+  }
+);

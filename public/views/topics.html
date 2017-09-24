@@ -20,15 +20,17 @@
   </div>
   <br>
 
-  <div class="new-msg-box">
+  <div class="new-msg-box" ng-switch="loggedIn">
     <textarea
     type="text"
     ng-model="newMessage.body"
+    ng-switch-when="true"
     class="message-input">
   </textarea>
     <br>
   <button
     ng-click="addMessage()"
+    ng-switch-when="true"
     class="new-msg-btn">
       Add Message
   </button>

@@ -1,4 +1,4 @@
-<div class="home-container">
+<div class="home-container" ng-switch="loggedIn">
   <h2 class="header-title">Topics:</h2>
       <div ng-repeat="topic in topics" class="home-info">
         <a ng-href="/topics/{{topic.id}}">
@@ -9,10 +9,12 @@
 
     <input
       type="text"
-      ng-model="newTopic.name">
+      ng-model="newTopic.name"
+      ng-switch-when="true">
       <br>
     <button
-      ng-click="addTopic()">
+      ng-click="addTopic()"
+      ng-switch-when="true">
         Add New Topic
     </button>
 </div>
